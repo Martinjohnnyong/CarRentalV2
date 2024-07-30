@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Create MySQL connection
 const connection = mysql.createConnection({
     host: ' mysql-martinong.alwaysdata.net',
-    user: 'martinong01',
+    user: 'martinong',
     password: 'Potestquivolt!',
     database: 'martinong_cars'
 });
