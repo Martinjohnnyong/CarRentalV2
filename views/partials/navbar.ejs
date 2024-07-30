@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Car Rental</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/addCar">Add new Car</a>
+        </li> 
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <% if (user) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/profile">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a> <!-- the path to the homepage-->
+          </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
