@@ -87,25 +87,6 @@ app.get('/rental/:id', (req, res) => {
     });
 });
 
-// add car route
-app.get('/addCar', (req, res) => {
-    res.render('addCar', { user: loggedInUser });
-});
-
-app.post('/addCar', upload.single('image'), (req, res) => {
-    const { name, price, quantity } = req.body;
-    const image = req.file.filename;
-    const sql = 'INSERT INTO car_rental (CarName, Price, image, availability) VALUES (?, ?, ?, ?)';
-
-    connection.query(sql, [name, price, image, quantity], (error, results) => {
-        if (error) {
-            console.error('Database query error:', error.message);
-            return res.status(500).send('Error adding car');
-        } else {
-            res.redirect('/');
-        }
-    });
-});
 
 // signup route
 app.get('/signup', (req, res) => {
